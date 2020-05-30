@@ -1,0 +1,26 @@
+
+<div class="container register-form">
+    <header class="jumbotron my-4 text-center">
+        <h4 class="display-3">Group Dashboard</h4>
+  
+        
+        <!-- <a href="#" class="btn btn-primary btn-lg">Call to action!</a> -->
+      </header> 
+<body>
+    
+    <div *ngFor="let groupTable of groupList" class="row">
+    
+        <div  class="column container1">
+          <div class="container">
+            <img src="https://i.ibb.co/d2pX0k8/9.jpg/500x325"  alt="Snow">
+            <button class="btn">{{groupTable.groupName}}</button>
+          </div>
+       
+        </div> 
+        <br> <br> <br>
+      </div>
+       
+</body>
+</div>
+
+

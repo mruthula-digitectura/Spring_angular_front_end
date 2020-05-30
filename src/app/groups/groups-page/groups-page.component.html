@@ -1,0 +1,92 @@
+<div class="bg">
+
+    <header class="jumbotron my-4 text-center">
+        <h4 class="display-3">Group Creation</h4>
+
+
+        <!-- <a href="#" class="btn btn-primary btn-lg">Call to action!</a> -->
+    </header>
+    <div class="container register-form">
+        <div class="form">
+            <div class="form-content">
+                <div class="row">
+                    <!-- <form [formGroup]="myform" (ngSubmit)="onSubmit()"> -->
+                        
+                        <div class="row register-form">
+                                   
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <!-- <label for="exampleFormControlSelect1">Group Name</label> -->
+                                     <input type="text" size="70" class="form-control" [(ngModel)]="groupName" placeholder="Group Name *" value="" />
+                                </div>
+                                
+                        
+                                <label >Light Name *</label>
+                           
+                                <div class="form-group">
+                                   
+                                        <mat-form-field>
+                                            <mat-select  multiple [(ngModel)]="selectLight"(change)=check()>
+                                                <mat-option *ngFor="let light of lightIdAndName" [value]="light.id"
+                                                    (click)=check()>{{light.name}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-primary mb-2"
+                                                                (click)="saveGroup()">Save</button>
+                                </div>
+                                  
+                            </div>
+                        
+                        </div>
+
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Group_id</th>
+                        <th scope="col">Group Name</th>
+                        <!-- <th scope="col">Light_id</th> -->
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let groupTable of groupList; let i=index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{groupTable.groupName}}</td>
+                        <!-- <td>{{groupTable.group_light_mapping}}</td> -->
+                        <td>
+                            <span style="margin-right: 10px"><button (click)="edit(groupTable)"
+                                    class="btn btn-primary mb-2">Edit</button> </span>
+                            <span><button (click)="delete(groupTable)"
+                                    class="btn btn-primary mb-2">Delete</button></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+<div>
+    <!-- <footer class="py-5 bg-dark">
+        <div class="container">
+          
+        </div>
+        
+    </footer> -->
+</div>
+</div>
+
+
+
+
+
+
+

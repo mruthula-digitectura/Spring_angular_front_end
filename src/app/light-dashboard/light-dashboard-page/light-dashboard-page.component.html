@@ -1,0 +1,27 @@
+
+<div class="container register-form">
+  <br>
+  <header class="jumbotron my-4 text-center">
+      <h4 class="display-3">Light Dashboard</h4>
+
+      
+      <!-- <a href="#" class="btn btn-primary btn-lg">Call to action!</a> -->
+    </header> 
+<body>
+  
+  <div *ngFor="let lightTable of lightList" class="row">
+    
+    <div  class="column container1">
+      <div class="container">
+        <img src="https://i.ibb.co/m5DfBPP/5.png"  alt="Snow">
+        <button class="btn">{{lightTable.lightName}}</button>
+      </div>
+   
+    </div> 
+    <br> <br> <br>
+  </div>
+ 
+</body>
+</div>
+
+

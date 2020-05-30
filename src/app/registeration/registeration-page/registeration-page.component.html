@@ -1,0 +1,119 @@
+
+<header class="jumbotron my-4 text-center">
+    <h6 class="display-3">User Creation</h6>
+
+    
+    <!-- <a href="#" class="btn btn-primary btn-lg">Call to action!</a> -->
+  </header> 
+<div class="container">
+    <div class="register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+            <h3>Welcome</h3>
+            
+        </div>
+            <div class="col-md-9 register-right">
+            
+                 <div class="tab-content" id="myTabContent">
+                       <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Register for New User</h3>
+                            <!-- <form> -->
+                                   <div class="row register-form">
+                                   
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                 <input type="text" class="form-control" [(ngModel)]="firstName" placeholder="First Name *" value="" />
+                                            </div>
+                                            <div class="form-group row">
+                                                 <input type="text" class="form-control" [(ngModel)]="lastName" placeholder="Last Name *" value="" />
+                                            </div>
+                                             <div class="form-group row">
+                                                  <input type="text" class="form-control" [(ngModel)]="userName" placeholder="User Name *" value="" />
+                                            </div>
+                                            <div class="form-group row">
+                                                <input type="text" class="form-control" [(ngModel)]="userType" placeholder="User Type *" value="" />
+                                           </div>
+                                             <div class="form-group row">
+                                                  <input type="password" class="form-control"  [(ngModel)]="password" placeholder=" Password *" value="" />
+                                            </div>
+                            
+                                        </div>
+                                       <div class="col-md-6">
+                                        <label for="exampleFormControlSelect">Light Name</label>
+                                            <div class="form-group">
+                                                
+                                                    <mat-form-field>
+                                                        <mat-select  multiple [(ngModel)]="selectLight"(change)=checkLight()>
+                                                            <mat-option *ngFor="let light of lightIdAndName" [value]="light.id"
+                                                                (click)=checkLight()>{{light.name}}</mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                            </div>
+                                            <label for="exampleFormControlSelect">Group Name</label>
+                                            <div class="form-group">
+                                                
+                                                <mat-form-field>
+                                                    <mat-select  multiple [(ngModel)]="selectGroup"(change)=checkGroup()>
+                                                        <mat-option *ngFor="let group of groupIdAndName" [value]="group.id"
+                                                            (click)=checkGroup()>{{group.name}}</mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <!-- <div class="form-group">
+                                                <button type="button" class="btn btn-primary mb-2" (click)="createNewUser()">New User</button>
+                                            </div> -->
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-primary mb-2" (click)="saveUser()">Save</button>
+                                            </div>
+                                        </div>
+                                   
+                                    </div>
+                                <!-- </form> -->
+                                </div>
+                
+               
+            </div>
+        </div>
+ 
+    </div>
+    </div>
+<br>
+
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">User_id</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Password</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let userDetailsTable of userList; let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{userDetailsTable.firstName}}</td>
+                <td>{{userDetailsTable.lastname}}</td>
+                <td>{{userDetailsTable.userName}}</td>
+                <td>{{userDetailsTable.password}}</td>
+
+                <td>
+                    <span style="margin-right: 10px"><button (click)="edit(userDetailsTable)"class="btn btn-primary mb-2">Edit</button> </span>
+                    <span><button (click)="delete(userDetailsTable)" class="btn btn-primary mb-2">Delete</button></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+</div>
+
+<!-- <footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white"></p>
+    </div>
+  
+  </footer> -->

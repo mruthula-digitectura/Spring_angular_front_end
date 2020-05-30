@@ -1,0 +1,82 @@
+
+    <div class="bg">
+        
+    
+        <!-- Jumbotron Header -->
+    <header class="jumbotron my-4 text-center">
+        <h4 class="display-3">Light Creation</h4>
+  
+        
+        <!-- <a href="#" class="btn btn-primary btn-lg">Call to action!</a> -->
+      </header> 
+       <div class="container register-form"> 
+        <div class="form">
+        <div class="form-content">
+            <div class="row">
+                <form [formGroup]="myForm" (ngSubmit)="submitForm(myForm)">
+                   
+                        <div class="form-group">
+                            
+                            <div class="col-md-6">
+
+                                <!-- <label for="exampleFormControlSelect2">Light Name</label>
+                                 <select class="form-control form-control-lg" formControlName="lightName">
+                                <option selected>Select the</option>
+                                <option value="pantry light1">pantry light1</option>
+                                <option>pantry light2</option>
+                                <option>pantry light3</option>
+                                <option>conference room light1</option>
+                                <option>conference room  light2</option>
+                                <option>conference romm light3</option>
+                                <option>board room light1</option>
+                                <option>board room light2</option>
+                                <option>board room light3</option>
+    
+                                   </select> -->
+                                   <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Light Name</label>
+                                    <input type="text" class="form-control" id="exampleFormControlSelect1" formControlName="lightName" size="70">
+                                        
+                                  </div>
+                            </div>
+                              
+                        
+                           
+                  
+                         <br><br>
+                         
+                         <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary mb-2" [disabled]="!myForm.valid">Save</button>
+                         </div>
+                            
+                        </div>
+                    
+                        
+                </form>    
+            </div>
+        </div>
+    </div><br><br>
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Light_id</th>
+                    <th scope="col">Light Name</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lightTable of lightList; let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{lightTable.lightName}}</td>
+                    <td>
+                        <span style="margin-right: 10px"><button (click)="edit(lightTable)"class="btn btn-primary mb-2">Edit</button> </span>
+                        <span><button (click)="delete(lightTable)" class="btn btn-primary mb-2">Delete</button></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+

@@ -1,0 +1,69 @@
+
+<div class="bg">
+	<header class="jumbotron my-4">
+		<h6 class="display-3"></h6>
+	</header> 
+
+		<div class="container">
+				<div class="d-flex justify-content-center">
+					<div class="card mt-5 col-md-4 animated bounceInDown myForm">
+						<div class="card-header">
+							<h4>Sign In</h4>
+						</div>
+						<div class="card-body">
+							<!-- <form> -->
+								<div id="dynamic_container">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<!-- <span class="input-group-text br-15"><i class="fas fa-at"></i></span> -->
+										</div>
+										<!-- <input type="text" placeholder="User type" class="form-control" formControlName="userType"/> -->
+									</div>
+									<div class="input-group mt-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text br-15"><i class="fas fa-user-graduate"></i></span>
+										</div>
+										<input type="text" class="form-control" [(ngModel)]="userName" placeholder="User Name *" value="" />
+										
+									</div>
+									
+									<div class="input-group mt-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text br-15"><i class="fas fa-at"></i></span>
+										</div>
+										<input type="password" class="form-control"  [(ngModel)]="password" placeholder=" Password *" value="" />
+									</div>
+								</div>
+							<!-- </form> -->
+						</div>
+						<div class="card-footer">
+							<button type="submit" class="btn btn-primary btn-lg btn-block btn-huge" (click)="onLoginClick()">submit</button>
+							<!-- <button type="submit" class="btn btn-primary btn-lg btn-block btn-huge" (click)="onLoginClick()"> submit </button> -->
+							<!-- <button type="submit" class="btn btn-success btn-sm float-right submit_btn" [disabled]="!myForm.valid">Submit</button> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- <a routerLink="home"class="nav-link" routerLinkActive="active">home</a> -->
+		<!-- <div><app-home-page></app-home-page></div> <br>
+		<div><app-settings-page></app-settings-page></div>
+		<div><app-registeration-page></app-registeration-page></div> <br>
+		<div><app-lights-page></app-lights-page></div>
+		<div><app-groups-page></app-groups-page></div>
+		<div><app-light-display-page></app-light-display-page></div>
+		<div><app-group-dashboard-page></app-group-dashboard-page></div> -->
+		
+	    
+		<br><br><br><br>
+	</div>	
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+     
+    </div>
+    <!-- /.container -->
+  </footer>
+
+ 
+  
+  <!-- <router-outlet></router-outlet> -->
